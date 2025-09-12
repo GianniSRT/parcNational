@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   notify:
@@ -13,4 +16,4 @@ jobs:
         run: |
           curl -X POST "https://chat.googleapis.com/v1/spaces/AAQAJQJEr0o/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=JysM6Q6gCB8dVFdZXklR3iO1EzyAA9ICZjnNMtl_EVs" \
           -H 'Content-Type: application/json' \
-          -d "{\"text\": \"🚀 Nouveau push sur $GITHUB_REPOSITORY par $GITHUB_ACTOR\"}"
+          -d "{\"text\": \"🚀 Action: $GITHUB_EVENT_NAME sur $GITHUB_REPOSITORY par $GITHUB_ACTOR\"}"
