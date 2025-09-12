@@ -7,12 +7,16 @@ on:
   pull_request:
     branches:
       - main
+    types:
+      - opened
+      - closed  # Pour détecter les merges
 
 jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
       - name: Send message to Google Chat
+        if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true)
         run: |
           curl -X POST "https://chat.googleapis.com/v1/spaces/AAQAJQJEr0o/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=JysM6Q6gCB8dVFdZXklR3iO1EzyAA9ICZjnNMtl_EVs" \
           -H 'Content-Type: application/json' \
