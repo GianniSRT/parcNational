@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inscription</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="vh-100">
+  <div class="container-fluid h-100">
+    <div class="row h-100">
+
+      <!-- Colonne gauche -->
+      <div class="col-md-6 d-flex flex-column justify-content-center bg-white p-5">
+        
+        <!-- Titre -->
+        <div class="bg-dark text-white text-center p-3 rounded mb-4">
+          <h2 class="m-0">Inscription</h2>
+        </div>
+
+        <!-- Formulaire adapté pour JS -->
+        <form id="registerForm">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <input type="text" id="nom" class="form-control bg-primary text-white rounded-3" placeholder="Nom :" required>
+            </div>
+            <div class="col-md-6">
+              <input type="text" id="prenom" class="form-control bg-primary text-white rounded-3" placeholder="Prénom :" required>
+            </div>
+            <div class="col-12">
+              <input type="email" id="email" class="form-control bg-primary text-white rounded-3" placeholder="Email :" required>
+            </div>
+            <div class="col-12">
+              <input type="password" id="mot_de_passe" class="form-control bg-primary text-white rounded-3" placeholder="Mot de passe :" required>
+            </div>
+            <div class="col-12 text-center">
+              <button type="submit" class="btn btn-dark px-5 rounded-3">Valider</button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Lien vers la page de connexion -->
+        <div class="text-center mt-3">
+          <a href="connexion.html" class="text-decoration-none">Déjà inscrit ? Connectez-vous ici</a>
+        </div>
+      </div>
+
+      <!-- Colonne droite (image) -->
+      <div class="col-md-6 d-none d-md-flex align-items-center justify-content-center bg-light">
+        <img src="src/images/auth_form.jpg" alt="Image de calanque" class="img-fluid rounded-start">
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts JS -->
+  <script src="src/js/register.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

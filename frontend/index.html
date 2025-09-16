@@ -1,13 +1,102 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accueil - Parc National des Calanques</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="src/images/logo.png" 
+           alt="Logo" width="50" height="50" class="me-2">
+      <span class="fw-bold">Croisières Marseille Calanques</span>
+    </a>
+
+    <!-- Burger button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Sentiers</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Campings</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Réservations</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- Section Hero -->
+  <header class="container-fluid py-5 text-dark bg-light">
+    <div class="row align-items-center">
+      <div class="col-md-6 px-5">
+        <h1 class="fw-bold mb-4">
+          Explorez, préservez et profitez du Parc National des Calanques en toute simplicité.<br>
+          Commencez votre aventure nature dès maintenant 🌊🌿
+        </h1>
+      </div>
+      <div class="col-md-6">
+        <img src="src/images/landing_page.jpg" 
+             class="img-fluid rounded" alt="Calanques">
+      </div>
+    </div>
+  </header>
+
+  <hr class="my-4 border border-dark">
+
+
+  <!-- Section cartes -->
+  <section class="container py-5">
+    <div class="row g-4 text-center">
+      
+      <div class="col-6 col-md-3">
+        <div class="card h-100">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" class="card-img-top" alt="Calanques">
+          <div class="card-body">
+            <h6 class="card-title">Calanques</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="card h-100">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" class="card-img-top" alt="Signal">
+          <div class="card-body">
+            <h6 class="card-title">Ne perdez plus jamais le fil !</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="card h-100">
+          <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e" class="card-img-top" alt="Coup de coeur">
+          <div class="card-body">
+            <h6 class="card-title">Vos coups de cœur réunis !</h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="card h-100">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" class="card-img-top" alt="Fidélité">
+          <div class="card-body">
+            <h6 class="card-title">Récompenses de fidélité</h6>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+<!-- Bootstrap JS (nécessaire pour le burger) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
