@@ -1,23 +1,13 @@
 const express = require('express');
+const db = require('./config/database');
+
 const app = express();
-const bodyParser = require('body-parser');
-const routes = require('./routes/index');
+app.use(express.json());
 
-// Middleware
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+// import des routes utilisateurs
+const utilisateursRoutes = require('./routes/userRoutes');
+app.use('/utilisateurs', utilisateursRoutes);
 
-// Routes
-app.use('/api', routes);
-
-// Error handling
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).send('Something broke!');
-});
-
-// Start the server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+app.listen(3000, () => {
+  console.log("🚀 Serveur Node lancé sur http://localhost:3000");
 });
