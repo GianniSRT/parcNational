@@ -1,5 +1,4 @@
 <?php
-<?php
 require_once '../models/userModel.php';
 
 function getAllUsersController($mysqli) {
