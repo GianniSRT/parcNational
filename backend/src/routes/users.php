@@ -1,12 +1,10 @@
 <?php
-<?php
 header('Content-Type: application/json');
 $mysqli = new mysqli('localhost', 'root', '', 'parc_national');
 require_once '../controllers/userController.php';
 
 $method = $_SERVER['REQUEST_METHOD'];
-$request = explode('/', trim($_SERVER['PATH_INFO'],'/'));
-$id = isset($request[1]) ? intval($request[1]) : null;
+$id = isset($_GET['id']) ? intval($_GET['id']) : null;
 
 switch ($method) {
     case 'GET':

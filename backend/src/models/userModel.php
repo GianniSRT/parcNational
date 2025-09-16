@@ -1,5 +1,4 @@
 <?php
-<?php
 function getAllUsers($mysqli) {
     $result = $mysqli->query("SELECT * FROM Utilisateur");
     return $result->fetch_all(MYSQLI_ASSOC);
