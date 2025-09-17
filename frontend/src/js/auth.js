@@ -9,9 +9,9 @@ async function login(email, mot_de_passe) {
 
     const result = await response.json();
     if (response.ok) {
-        alert(result.message + "\nBienvenue " + result.user.nom + " " + result.user.prenom);
-        // Ici tu peux stocker l'utilisateur ou rediriger
-        window.location.href = 'index.html'; // Exemple de redirection
+        localStorage.setItem('user', JSON.stringify(result.user));
+        // Redirection avec l'id utilisateur dans l'URL
+        window.location.href = `profile.html?id=${result.user.id_utilisateur}`;
     } else {
         alert(result.message);
     }

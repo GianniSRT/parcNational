@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil - Croisières Marseille Calanques</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="src/images/logo.png" 
+           alt="Logo" width="50" height="50" class="me-2">
+      <span class="fw-bold">Croisières Marseille Calanques</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="sentier.html">Sentiers</a></li>
+        <li class="nav-item"><a class="nav-link" href="camping.html">Campings</a></li>
+        <li class="nav-item"><a class="nav-link" href="reservation.html">Réservations</a></li>
+        <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- Main content -->
+  <div class="container py-5">
+    <div class="row g-4">
+
+      <!-- Profil -->
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header text-center">
+            Mon profil :
+          </div>
+          <div class="card-body text-center">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="rounded-circle mb-3" width="100" height="100" alt="Avatar">
+            <p><strong>Nom :</strong> <span id="profileNom"></span></p>
+            <p><strong>Prénom :</strong> <span id="profilePrenom"></span></p>
+            <p><strong>Email :</strong> <span id="profileEmail"></span></p>
+            <p><strong>Date de création :</strong> <span id="profileDate"></span></p>
+            <p><strong>Type d'utilisateur :</strong> <span id="profileType"></span></p>
+            <button class="btn btn-dark mt-3">Modifier</button>
+            <button id="logoutBtn" class="btn btn-danger mt-3">Déconnexion</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Réservations -->
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header text-center">
+            Mes réservations :
+          </div>
+
+          <!-- Reservation 1 -->
+          <div class="card-body mb-3">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" class="img-fluid mb-2" alt="Calanques">
+            <p><strong>Campings :</strong></p>
+            <p><strong>Date :</strong></p>
+            <p><strong>Nombre de personnes :</strong></p>
+            <a href="#" class="link-primary">Tarifs</a>
+          </div>
+
+          <!-- Reservation 2 -->
+          <div class="card-body">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" class="img-fluid mb-2" alt="Calanques">
+            <p><strong>Campings :</strong></p>
+            <p><strong>Date :</strong></p>
+            <p><strong>Nombre de personnes :</strong></p>
+            <a href="#" class="link-primary">Tarifs</a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="src/js/profile.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
