@@ -10,12 +10,25 @@ async function login(email, mot_de_passe) {
     const result = await response.json();
     if (response.ok) {
         localStorage.setItem('user', JSON.stringify(result.user));
-        // Redirection avec l'id utilisateur dans l'URL
-        window.location.href = `profile.html?id=${result.user.id_utilisateur}`;
+    // Redirection vers la page d'accueil
+    window.location.href = 'index.html';
     } else {
         alert(result.message);
     }
 }
+
+// Vérification de l'état de la connexion de l'utilisateur
+fetch('http://localhost/parcNational/backend/src/routes/profile.php', {
+    credentials: 'include'
+})
+.then(response => response.json())
+.then(result => {
+    if (result.user) {
+        console.log('Utilisateur connecté :', result.user);
+    } else {
+        console.log('Utilisateur non connecté');
+    }
+});
 
 // Exemple d’utilisation avec un formulaire :
 document.getElementById('loginForm').addEventListener('submit', function(e) {
