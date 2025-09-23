@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', async () => {
+    console.log('profile.js chargé');
     const response = await fetch('http://localhost/parcNational/backend/src/routes/profile.php', {
         credentials: 'include'
     });
@@ -12,6 +13,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('profileDate').textContent = user.date_inscription;
         document.getElementById('profileType').textContent = user.type_utilisateur;
     }
+    fetch('http://localhost/parcNational/backend/src/routes/profile.php', {
+        credentials: 'include'
+    })
+    .then(response => response.json())
+    .then(result => {
+        console.log(result);
+        // ...affichage...
+    });
 });
 
 document.getElementById('logoutBtn').addEventListener('click', async () => {
