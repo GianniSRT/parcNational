@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 15 sep. 2025 à 13:12
+-- Généré le : jeu. 02 oct. 2025 à 11:41
 -- Version du serveur : 9.1.0
 -- Version de PHP : 8.3.14
 
@@ -72,8 +72,20 @@ CREATE TABLE IF NOT EXISTS `camping` (
   `capacite_disponible` int NOT NULL,
   `disponible` tinyint(1) DEFAULT '1',
   `tarif_nuit` decimal(10,2) NOT NULL,
+  `image` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_camping`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `camping`
+--
+
+INSERT INTO `camping` (`id_camping`, `nom`, `localisation`, `capacite_totale`, `capacite_disponible`, `disponible`, `tarif_nuit`, `image`) VALUES
+(2, 'Camping des Calanques', '12 rue du Littoral, Marseille', 120, 45, 1, 32.50, 'src/images/camping1.avif'),
+(3, 'Camping du Cap', '45 avenue du Cap, Cassis', 80, 20, 1, 40.00, 'src/images/camping2.jpg'),
+(4, 'Camping du Belvédère', '1 chemin du Belvédère, La Ciotat', 60, 10, 1, 28.00, 'src/images/camping3.avif'),
+(5, 'Camping du Port', '8 quai du Port, Marseille', 100, 0, 0, 35.00, 'src/images/camping4.avif'),
+(6, 'Camping du Mont Puget', 'Route du Mont Puget, Marseille', 50, 50, 1, 25.00, 'src/images/camping5.webp');
 
 -- --------------------------------------------------------
 
@@ -129,9 +141,24 @@ CREATE TABLE IF NOT EXISTS `sentier` (
   `distance_km` decimal(5,2) DEFAULT NULL,
   `point_interet` varchar(255) DEFAULT NULL,
   `statut` enum('Ouvert','Ferme') DEFAULT 'Ouvert',
+  `image` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_sentier`),
   KEY `id_administrateur` (`id_administrateur`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `sentier`
+--
+
+INSERT INTO `sentier` (`id_sentier`, `id_administrateur`, `nom`, `description`, `niveau_difficulte`, `distance_km`, `point_interet`, `statut`, `image`) VALUES
+(1, 0, 'Calanque d\'En-Vau', 'Sentier spectaculaire menant à une crique turquoise entourée de falaises.', NULL, NULL, NULL, 'Ouvert', 'src/images/sentier1.jpg'),
+(2, 0, 'Sentier du Cap Canaille', 'Randonnée sur les plus hautes falaises maritimes d\'Europe avec vue panoramique.', NULL, NULL, NULL, 'Ouvert', 'src/images/sentier2.jpg'),
+(3, 0, 'Calanque de Sormiou', 'Sentier facile vers une calanque familiale et son port pittoresque.', NULL, NULL, NULL, 'Ouvert', 'src/images/sentier3.jpg'),
+(4, 0, 'Calanque de Morgiou', 'Chemin escarpé menant à une calanque sauvage et préservée.', NULL, NULL, NULL, 'Ouvert', 'src/images/sentier4.jpg'),
+(5, 0, 'Sentier du Belvédère', 'Balade offrant un panorama sur tout le parc national.', NULL, NULL, NULL, 'Ouvert', 'src/images/sentier5.jpg'),
+(6, 0, 'Calanque de Port-Pin', 'Petite calanque accessible à pied, idéale pour la baignade.', NULL, NULL, NULL, 'Ouvert', 'src/images/sentier6.jpg'),
+(7, 0, 'Sentier du Mont Puget', 'Randonnée sportive vers le sommet du parc avec vue sur Marseille.', NULL, NULL, NULL, 'Ouvert', 'src/images/sentier7.jpg'),
+(8, 0, 'Calanque de Callelongue', 'Sentier côtier vers une calanque authentique et son village.', NULL, NULL, NULL, 'Ouvert', 'src/images/sentier8.jpg');
 
 -- --------------------------------------------------------
 
@@ -150,7 +177,19 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `type_utilisateur` enum('Visiteur','Admin') NOT NULL,
   PRIMARY KEY (`id_utilisateur`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `utilisateur`
+--
+
+INSERT INTO `utilisateur` (`id_utilisateur`, `nom`, `prenom`, `email`, `mot_de_passe`, `date_inscription`, `type_utilisateur`) VALUES
+(2, 'Smith', 'janet', 'janet.smith@example.com', 'janet123', '2025-09-16 11:03:09', 'Visiteur'),
+(3, 'Doe', 'John', 'john.doe@example.com', 'john123', '2025-09-16 12:46:42', 'Visiteur'),
+(4, 'heureux', 'axel', 'axel.heureux@laplateforme.io', 'Heureux13500.', '2025-09-16 13:26:09', 'Admin'),
+(5, 'mogrovejo', 'justin', 'mogrovejo.justin@laplateforme.io', 'justin123', '2025-09-16 13:29:15', 'Visiteur'),
+(7, 'maxime', 'cuadro', 'maxime.cuadro@laplateforme.io', 'maxime123', '2025-09-16 14:01:42', 'Visiteur'),
+(9, 'test', 'test', 'test@test.fr', '$2y$10$09EOoOeIuGJKl2jnJmDuLeKalM1hZvHd6DI4QziIa84czJfeS4J8m', '2025-09-19 14:05:34', 'Visiteur');
 
 -- --------------------------------------------------------
 
