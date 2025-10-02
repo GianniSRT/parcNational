@@ -16,6 +16,7 @@ function getUserByIdController($mysqli, $id) {
 }
 
 function createUserController($mysqli, $data) {
+    $data['mot_de_passe'] = password_hash($data['mot_de_passe'], PASSWORD_DEFAULT);
     $id = createUser($mysqli, $data);
     echo json_encode(['message' => '✅ Utilisateur créé', 'id' => $id]);
 }
